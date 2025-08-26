@@ -52,6 +52,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// BloodBridge specific colors
+				'blood-red': 'hsl(var(--blood-red))',
+				'deep-blue': 'hsl(var(--deep-blue))',
+				'light-blue': 'hsl(var(--light-blue))',
+				'success-green': 'hsl(var(--success-green))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
