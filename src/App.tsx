@@ -13,6 +13,10 @@ import SignIn from "./pages/SignIn";
 import UserSettings from "./pages/UserSettings";
 import ForgotPassword from "./pages/ForgotPassword";
 import NotFound from "./pages/NotFound";
+import BloodInventory from "./pages/BloodInventory";
+import HospitalSettings from "./pages/HospitalSettings";
+import UrgentBloodRequest from "./pages/UrgentBloodRequest";
+import ScheduleDonation from "./pages/ScheduleDonation";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +35,10 @@ const App = () => (
           <Route path="/donor-dashboard" element={<DonorDashboard />} />
           <Route path="/hospital-dashboard" element={<HospitalDashboard />} />
           <Route path="/user-settings" element={<UserSettings />} />
+          <Route path="/blood-inventory" element={<BloodInventory />} />
+          <Route path="/hospital-settings" element={<HospitalSettings />} />
+          <Route path="/urgent-blood-request" element={<UrgentBloodRequest />} />
+          <Route path="/schedule-donation" element={<ScheduleDonation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
