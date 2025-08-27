@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -7,7 +6,7 @@ const Landing = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-deep-blue via-primary to-purple-900">
       {/* Navigation - Made sticky */}
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-white/10 backdrop-blur-sm border-b border-white/20">
+      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-primary/90 backdrop-blur-sm border-b border-primary/30">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-blood-red rounded-full flex items-center justify-center">
             <span className="text-white text-lg font-bold">+</span>
@@ -35,11 +34,6 @@ const Landing = () => {
           <Link to="/signin">
             <Button variant="ghost" className="text-white border-white hover:bg-white/20">
               SignIn
-            </Button>
-          </Link>
-          <Link to="/signup">
-            <Button className="bg-blood-red hover:bg-blood-red/90 text-white">
-              SignUp
             </Button>
           </Link>
         </div>
