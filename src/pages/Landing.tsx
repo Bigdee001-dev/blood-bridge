@@ -56,14 +56,25 @@ const Landing = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <div className="px-6 py-20 md:py-32">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      {/* Hero Section with blood splatter background */}
+      <div 
+        className="px-6 py-20 md:py-32 relative"
+        style={{
+          backgroundImage: `url('/lovable-uploads/2733b4b2-094b-49b3-bf04-bb9fc7f3b253.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Dark overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
           <div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Be The Hero, Save a Life.
             </h1>
-            <p className="text-xl text-white/80 mb-8 leading-relaxed">
+            <p className="text-xl text-white/90 mb-8 leading-relaxed">
               Be the reason another person lives, come rescue others with just your blood!
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -83,7 +94,7 @@ const Landing = () => {
           <div className="flex flex-col gap-6">
             {/* Hero Image Placeholder */}
             <div className="relative">
-              <div className="w-80 h-80 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+              <div className="w-80 h-80 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-blood-red rounded-full mx-auto mb-4 flex items-center justify-center">
                     <span className="text-white text-2xl">♥</span>
