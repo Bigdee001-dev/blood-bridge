@@ -15,6 +15,10 @@ import { useState } from "react";
 const ScheduleDonation = () => {
   const [date, setDate] = useState<Date>();
 
+  const handleDateSelect = (selectedDate: Date | undefined) => {
+    setDate(selectedDate);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-deep-blue via-primary to-purple-900 flex items-center justify-center p-6">
       <Card className="w-full max-w-md bg-white">
@@ -75,7 +79,7 @@ const ScheduleDonation = () => {
                   <Calendar
                     mode="single"
                     selected={date}
-                    onSelect={setDate}
+                    onSelect={handleDateSelect}
                     initialFocus
                     className="pointer-events-auto"
                   />
