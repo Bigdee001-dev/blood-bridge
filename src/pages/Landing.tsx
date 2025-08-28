@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -5,34 +6,48 @@ import { Link } from "react-router-dom";
 const Landing = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-deep-blue via-primary to-purple-900">
-      {/* Navigation - Made sticky */}
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-primary/90 backdrop-blur-sm border-b border-primary/30">
+      {/* Navigation - Made sticky with red background */}
+      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-blood-red backdrop-blur-sm border-b border-blood-red/30">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-blood-red rounded-full flex items-center justify-center">
-            <span className="text-white text-lg font-bold">+</span>
+          {/* Blood drop logo */}
+          <div className="w-8 h-8 flex items-center justify-center">
+            <svg 
+              width="32" 
+              height="32" 
+              viewBox="0 0 32 32" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+              className="text-white"
+            >
+              <path 
+                d="M16 2C16 2 8 10 8 18C8 22.4183 11.5817 26 16 26C20.4183 26 24 22.4183 24 18C24 10 16 2 16 2Z" 
+                fill="currentColor"
+              />
+              <circle cx="13" cy="16" r="2" fill="rgba(255,255,255,0.3)" />
+            </svg>
           </div>
           <span className="text-white text-xl font-semibold">BloodBridge Naija</span>
         </div>
         
         <div className="hidden md:flex items-center gap-8">
-          <Link to="/" className="text-white hover:text-light-blue transition-colors">Home</Link>
-          <Link to="/about" className="text-white hover:text-light-blue transition-colors">About</Link>
-          <Link to="/contact" className="text-white hover:text-light-blue transition-colors">Contact</Link>
+          <Link to="/" className="text-white hover:text-white/80 transition-colors">Home</Link>
+          <Link to="/about" className="text-white hover:text-white/80 transition-colors">About</Link>
+          <Link to="/contact" className="text-white hover:text-white/80 transition-colors">Contact</Link>
         </div>
         
         <div className="flex items-center gap-3">
           <Link to="/donor-signup">
-            <Button variant="outline" className="text-white border-white hover:bg-white/20 hover:text-white">
+            <Button variant="outline" className="text-white border-white bg-success-green/20 hover:bg-success-green hover:text-white hover:border-success-green transition-all">
               Donor
             </Button>
           </Link>
           <Link to="/hospital-signup">
-            <Button variant="outline" className="text-white border-white hover:bg-white/20 hover:text-white">
+            <Button variant="outline" className="text-white border-white bg-deep-blue/20 hover:bg-deep-blue hover:text-white hover:border-deep-blue transition-all">
               Hospital
             </Button>
           </Link>
           <Link to="/signin">
-            <Button variant="ghost" className="text-white border-white hover:bg-white/20">
+            <Button variant="ghost" className="text-white hover:bg-white/20">
               SignIn
             </Button>
           </Link>
@@ -186,8 +201,21 @@ const Landing = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-blood-red rounded-full flex items-center justify-center">
-                  <span className="text-white text-lg font-bold">+</span>
+                <div className="w-8 h-8 flex items-center justify-center">
+                  <svg 
+                    width="32" 
+                    height="32" 
+                    viewBox="0 0 32 32" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="text-blood-red"
+                  >
+                    <path 
+                      d="M16 2C16 2 8 10 8 18C8 22.4183 11.5817 26 16 26C20.4183 26 24 22.4183 24 18C24 10 16 2 16 2Z" 
+                      fill="currentColor"
+                    />
+                    <circle cx="13" cy="16" r="2" fill="rgba(255,255,255,0.3)" />
+                  </svg>
                 </div>
                 <span className="text-xl font-semibold">BloodBridge</span>
               </div>
