@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -484,8 +483,8 @@ const Landing = () => {
               <h3 className="font-semibold mb-4">Get In Touch</h3>
               <div className="space-y-2 text-sm text-white/80">
                 <p>+234-812-3456-789</p>
-                <p>example@gmail.com</p>
-                <p>Engr. Ibrahim street, off ogbomoso</p>
+                <p>📧 support@bloodbridgenaija.com</p>
+                <p>📍 Plot 15,VGC, Lekki Phase 1, Lagos State, Nigeria.</p>
               </div>
             </div>
             
