@@ -33,29 +33,7 @@ const Landing = () => {
         <div className="hidden md:flex items-center gap-8">
           <Link to="/" className="text-white hover:text-white/80 transition-colors">Home</Link>
           <Link to="/about" className="text-white hover:text-white/80 transition-colors">About</Link>
-          <div className="relative group">
-            <button className="text-white hover:text-white/80 transition-colors">Blog</button>
-            <div className="absolute top-full left-0 mt-1 w-80 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <div className="p-4 space-y-2">
-                <a 
-                  href="https://www.notion.so/Blood-Donation-Not-just-a-good-deed-but-a-Life-saving-act-250474b475bc80aaa0f9f822083a18cf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block p-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
-                >
-                  Blood Donation: Not just a good deed, but a Life-saving act
-                </a>
-                <a 
-                  href="https://www.notion.so/BloodBridge-The-Life-Saving-Power-of-Technology-24c7d55750b480a28c1ff35dbcb9ed6f"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block p-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
-                >
-                  BloodBridge: The Life-Saving Power of Technology
-                </a>
-              </div>
-            </div>
-          </div>
+          <Link to="/contact" className="text-white hover:text-white/80 transition-colors">Contact</Link>
         </div>
         
         <div className="flex items-center gap-3">
@@ -497,25 +475,7 @@ const Landing = () => {
               <div className="space-y-2 text-sm">
                 <Link to="/" className="block text-white/80 hover:text-white">Home</Link>
                 <Link to="/about" className="block text-white/80 hover:text-white">About</Link>
-                <div className="space-y-1">
-                  <p className="text-white/80">Blog:</p>
-                  <a 
-                    href="https://www.notion.so/Blood-Donation-Not-just-a-good-deed-but-a-Life-saving-act-250474b475bc80aaa0f9f822083a18cf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block text-white/60 hover:text-white text-xs"
-                  >
-                    Blood Donation: A Life Saving Act
-                  </a>
-                  <a 
-                    href="https://www.notion.so/BloodBridge-The-Life-Saving-Power-of-Technology-24c7d55750b480a28c1ff35dbcb9ed6f"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block text-white/60 hover:text-white text-xs"
-                  >
-                    BloodBridge: The Life Saving Power Of Technology
-                  </a>
-                </div>
+                <Link to="/contact" className="block text-white/80 hover:text-white">Contact</Link>
               </div>
             </div>
             
@@ -544,18 +504,8 @@ const Landing = () => {
             </div>
           </div>
           
-          <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/80">
+          <div className="border-t border-white/20 pt-8 text-center text-sm text-white/80">
             <p>© 2024 BloodBridge Naija. All rights reserved.</p>
-            <a 
-              href="https://www.notion.so/Terms-And-Conditions-2541b97b113380f2a0b4d0fb5fd477d0"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 md:mt-0"
-            >
-              <Button variant="ghost" size="sm" className="text-white/80 hover:text-white hover:bg-white/10">
-                Terms and Conditions
-              </Button>
-            </a>
           </div>
         </div>
       </footer>
