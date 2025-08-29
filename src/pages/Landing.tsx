@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -38,7 +39,7 @@ const Landing = () => {
             <div className="absolute top-full left-0 mt-1 w-80 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
               <div className="p-4 space-y-2">
                 <a 
-                  href="https://www.notion.so/Blood-Donation-Not-just-a-good-deed-but-a-Life-saving-act-250474b475bc80aaa0f9f822083a18cf"
+                  href="https://www.notion.so/Blood-Donation-Not-just-a-good-deed-but-a-Life-saving-act-250474b475bc80aaa0f9f822083a18cf?source=copy_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block p-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
@@ -46,7 +47,7 @@ const Landing = () => {
                   Blood Donation: Not just a good deed, but a Life-saving act
                 </a>
                 <a 
-                  href="https://www.notion.so/BloodBridge-The-Life-Saving-Power-of-Technology-24c7d55750b480a28c1ff35dbcb9ed6f"
+                  href="https://www.notion.so/BloodBridge-The-Life-Saving-Power-of-Technology-24c7d55750b480a28c1ff35dbcb9ed6f?source=copy_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block p-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
@@ -500,7 +501,7 @@ const Landing = () => {
                 <div className="space-y-1">
                   <p className="text-white/80">Blog:</p>
                   <a 
-                    href="https://www.notion.so/Blood-Donation-Not-just-a-good-deed-but-a-Life-saving-act-250474b475bc80aaa0f9f822083a18cf"
+                    href="https://www.notion.so/Blood-Donation-Not-just-a-good-deed-but-a-Life-saving-act-250474b475bc80aaa0f9f822083a18cf?source=copy_link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block text-white/60 hover:text-white text-xs"
@@ -508,7 +509,7 @@ const Landing = () => {
                     Blood Donation: A Life Saving Act
                   </a>
                   <a 
-                    href="https://www.notion.so/BloodBridge-The-Life-Saving-Power-of-Technology-24c7d55750b480a28c1ff35dbcb9ed6f"
+                    href="https://www.notion.so/BloodBridge-The-Life-Saving-Power-of-Technology-24c7d55750b480a28c1ff35dbcb9ed6f?source=copy_link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block text-white/60 hover:text-white text-xs"
@@ -547,7 +548,7 @@ const Landing = () => {
           <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/80">
             <p>© 2024 BloodBridge Naija. All rights reserved.</p>
             <a 
-              href="https://www.notion.so/Terms-And-Conditions-2541b97b113380f2a0b4d0fb5fd477d0"
+              href="https://www.notion.so/Terms-And-Conditions-2541b97b113380f2a0b4d0fb5fd477d0?source=copy_link"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 md:mt-0"
