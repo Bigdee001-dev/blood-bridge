@@ -1,10 +1,85 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+// Animated Counter Component
+const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTime: number;
+    let animationFrame: number;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(end * easeOutCubic));
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+    
+    return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, [end, duration]);
+
+  return <span>{count}{suffix}</span>;
+};
 
 const Landing = () => {
+  // AI-generated avatar URLs for African men and women
+  const testimonials = [
+    {
+      avatar: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=64&h=64&fit=crop&crop=face",
+      quote: "I got an alert just 5km from my location. I donated within 2 hours. BloodBridge made saving a life so easy",
+      author: "Akin, 24, Lagos",
+      bgColor: "bg-green-400"
+    },
+    {
+      avatar: "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=64&h=64&fit=crop&crop=face",
+      quote: "As a first-time donor, I was nervous. But the app guided me through everything, and now I donate regularly",
+      author: "Fatima, Donor since May 2025",
+      bgColor: "bg-pink-400"
+    },
+    {
+      avatar: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=64&h=64&fit=crop&crop=face",
+      quote: "This app reduced our emergency blood search time by over 70%. It's a lifesaver literally",
+      author: "Dr. Adeola, Lagos State Teaching Hospital, Ikeja",
+      bgColor: "bg-blue-400"
+    },
+    {
+      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=64&h=64&fit=crop&crop=face",
+      quote: "With BloodBridge, we now reach matching donors in minutes, not hours. It's become part of our emergency protocol",
+      author: "Blood Bank Admin, Abuja",
+      bgColor: "bg-purple-400"
+    },
+    {
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face",
+      quote: "The notification system is incredible. I've helped save 5 lives in the past 6 months just by being available when needed",
+      author: "Emeka, Regular Donor, Port Harcourt",
+      bgColor: "bg-orange-400"
+    },
+    {
+      avatar: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=64&h=64&fit=crop&crop=face",
+      quote: "BloodBridge connected me with a donor for my daughter's surgery within 30 minutes. Forever grateful",
+      author: "Mrs. Adebayo, Mother, Ibadan",
+      bgColor: "bg-teal-400"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-deep-blue via-primary to-purple-900">
       {/* Navigation - Made sticky with red background */}
@@ -256,68 +331,68 @@ const Landing = () => {
             What Our Users Say
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-6">
-              <CardContent className="space-y-4">
-                <div className="w-16 h-16 bg-green-400 rounded-full mx-auto"></div>
-                <p className="text-sm text-muted-foreground italic">
-                  "I got an alert just 5km from my location. I donated within 2 hours. BloodBridge made saving a life so easy"
-                </p>
-                <p className="text-sm font-semibold">- Akin, 24, Lagos</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="p-6">
-              <CardContent className="space-y-4">
-                <div className="w-16 h-16 bg-pink-400 rounded-full mx-auto"></div>
-                <p className="text-sm text-muted-foreground italic">
-                  "As a first-time donor, I was nervous. But the app guided me through everything, and now I donate regularly"
-                </p>
-                <p className="text-sm font-semibold">- Fatima, Donor since May 2025</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="p-6">
-              <CardContent className="space-y-4">
-                <div className="w-16 h-16 bg-blue-400 rounded-full mx-auto"></div>
-                <p className="text-sm text-muted-foreground italic">
-                  "This app reduced our emergency blood search time by over 70%. It's a lifesaver literally"
-                </p>
-                <p className="text-sm font-semibold">- Dr. Adeola, Lagos State Teaching Hospital, Ikeja</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="p-6">
-              <CardContent className="space-y-4">
-                <div className="w-16 h-16 bg-purple-400 rounded-full mx-auto"></div>
-                <p className="text-sm text-muted-foreground italic">
-                  "With BloodBridge, we now reach matching donors in minutes, not hours. It's become part of our emergency protocol"
-                </p>
-                <p className="text-sm font-semibold">- Blood Bank Admin, Abuja</p>
-              </CardContent>
-            </Card>
+          <div className="max-w-4xl mx-auto">
+            <ScrollArea className="h-96 w-full rounded-md border p-4">
+              <div className="space-y-6">
+                {testimonials.map((testimonial, index) => (
+                  <Card key={index} className="p-6">
+                    <CardContent className="space-y-4">
+                      <div className="flex items-center gap-4">
+                        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200">
+                          <img 
+                            src={testimonial.avatar} 
+                            alt={`Avatar of ${testimonial.author}`}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              // Fallback to colored circle if image fails to load
+                              e.currentTarget.style.display = 'none';
+                              e.currentTarget.parentElement!.className = `w-16 h-16 ${testimonial.bgColor} rounded-full flex items-center justify-center`;
+                              e.currentTarget.parentElement!.innerHTML = '<span class="text-white text-xl">👤</span>';
+                            }}
+                          />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold">{testimonial.author}</p>
+                        </div>
+                      </div>
+                      <p className="text-sm text-muted-foreground italic">
+                        "{testimonial.quote}"
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </ScrollArea>
           </div>
         </div>
       </div>
 
-      {/* Stats Section */}
+      {/* Stats Section with Animated Counters */}
       <div className="px-6 py-20 bg-gradient-to-r from-gray-700 to-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 text-center text-white">
             <div>
-              <h3 className="text-4xl font-bold text-blood-red mb-2">500+</h3>
+              <h3 className="text-4xl font-bold text-blood-red mb-2">
+                <AnimatedCounter end={500} suffix="+" />
+              </h3>
               <p className="text-white/80">Pints Donated by donor heroes</p>
             </div>
             <div>
-              <h3 className="text-4xl font-bold text-success-green mb-2">40+</h3>
+              <h3 className="text-4xl font-bold text-success-green mb-2">
+                <AnimatedCounter end={40} suffix="+" />
+              </h3>
               <p className="text-white/80">Hospitals using the dashboard</p>
             </div>
             <div>
-              <h3 className="text-4xl font-bold text-yellow-400 mb-2">700+</h3>
+              <h3 className="text-4xl font-bold text-yellow-400 mb-2">
+                <AnimatedCounter end={700} suffix="+" />
+              </h3>
               <p className="text-white/80">lives saved in 3 months</p>
             </div>
             <div>
-              <h3 className="text-4xl font-bold text-blue-400 mb-2">90%</h3>
+              <h3 className="text-4xl font-bold text-blue-400 mb-2">
+                <AnimatedCounter end={90} suffix="%" />
+              </h3>
               <p className="text-white/80">Match Rate on urgent requests</p>
             </div>
           </div>
