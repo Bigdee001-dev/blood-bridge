@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Heart, Users, MapPin, Shield } from "lucide-react";
 
 // Animated Counter Component
 const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
@@ -82,48 +83,64 @@ const Landing = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-deep-blue via-primary to-purple-900">
-      {/* Navigation - Made sticky with red background */}
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-blood-red backdrop-blur-sm border-b border-blood-red/30">
-        <div className="flex items-center gap-2">
-          {/* Blood drop logo */}
-          <div className="w-8 h-8 flex items-center justify-center">
+      {/* Navigation - Enhanced with health/blood themes */}
+      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-gradient-to-r from-blood-red to-deep-blue backdrop-blur-sm border-b border-blood-red/30 shadow-lg">
+        <div className="flex items-center gap-3">
+          {/* Enhanced Blood drop logo with health theme */}
+          <div className="relative w-10 h-10 flex items-center justify-center bg-white/20 rounded-full backdrop-blur-sm">
             <svg 
-              width="32" 
-              height="32" 
+              width="28" 
+              height="28" 
               viewBox="0 0 32 32" 
               fill="none" 
               xmlns="http://www.w3.org/2000/svg"
-              className="text-white"
+              className="text-white drop-shadow-lg"
             >
               <path 
                 d="M16 2C16 2 8 10 8 18C8 22.4183 11.5817 26 16 26C20.4183 26 24 22.4183 24 18C24 10 16 2 16 2Z" 
                 fill="currentColor"
               />
-              <circle cx="13" cy="16" r="2" fill="rgba(255,255,255,0.3)" />
+              <circle cx="13" cy="16" r="2" fill="rgba(255,255,255,0.4)" />
+              <path d="M18 14c1 0 2 1 2 2s-1 2-2 2" stroke="rgba(255,255,255,0.3)" strokeWidth="1" fill="none"/>
             </svg>
+            <Heart className="absolute -top-1 -right-1 w-4 h-4 text-red-300 animate-pulse" />
           </div>
-          <span className="text-white text-xl font-semibold">BloodBridge Naija</span>
+          <div className="flex flex-col">
+            <span className="text-white text-xl font-bold tracking-wide">BloodBridge Naija</span>
+            <span className="text-white/70 text-xs">Saving Lives Through Technology</span>
+          </div>
         </div>
         
-        <div className="hidden md:flex items-center gap-8">
-          <Link to="/" className="text-white hover:text-white/80 transition-colors">Home</Link>
-          <Link to="/about" className="text-white hover:text-white/80 transition-colors">About</Link>
-          <Link to="/blog" className="text-white hover:text-white/80 transition-colors">Blog</Link>
+        <div className="hidden md:flex items-center gap-6">
+          <Link to="/" className="text-white hover:text-red-200 transition-colors flex items-center gap-1">
+            <Heart className="w-4 h-4" />
+            Home
+          </Link>
+          <Link to="/about" className="text-white hover:text-red-200 transition-colors flex items-center gap-1">
+            <Users className="w-4 h-4" />
+            About
+          </Link>
+          <Link to="/blog" className="text-white hover:text-red-200 transition-colors flex items-center gap-1">
+            <Shield className="w-4 h-4" />
+            Blog
+          </Link>
         </div>
         
         <div className="flex items-center gap-3">
           <Link to="/donor-signup">
-            <Button variant="outline" className="text-white border-white bg-success-green/20 hover:bg-success-green hover:text-white hover:border-success-green transition-all">
-              Donor
+            <Button className="bg-success-green/90 hover:bg-success-green text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+              <Heart className="w-4 h-4" />
+              Donate Blood
             </Button>
           </Link>
           <Link to="/hospital-signup">
-            <Button variant="outline" className="text-white border-white bg-deep-blue/20 hover:bg-deep-blue hover:text-white hover:border-deep-blue transition-all">
-              Hospital
+            <Button className="bg-white/20 hover:bg-white/30 text-white border border-white/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+              <MapPin className="w-4 h-4" />
+              Hospital Portal
             </Button>
           </Link>
           <Link to="/signin">
-            <Button variant="ghost" className="text-white hover:bg-white/20">
+            <Button variant="ghost" className="text-white hover:bg-white/20 shadow-lg">
               SignIn
             </Button>
           </Link>
@@ -558,7 +575,7 @@ const Landing = () => {
               <h3 className="font-semibold mb-4">Get In Touch</h3>
               <div className="space-y-2 text-sm text-white/80">
                 <p>+234-812-3456-789</p>
-                <p>📧 support@bloodbridgenaija.com</p>
+                <p>📧 bloodbridgenaija@gmail.com</p>
                 <p>📍 Plot 15,VGC, Lekki Phase 1, Lagos State, Nigeria.</p>
               </div>
             </div>
@@ -566,15 +583,30 @@ const Landing = () => {
             <div>
               <h3 className="font-semibold mb-4">Follow Us</h3>
               <div className="flex gap-4">
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                <a 
+                  href="https://www.facebook.com/profile.php?id=61580110702321" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
                   <span className="text-sm">f</span>
-                </div>
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                  <span className="text-sm">t</span>
-                </div>
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                </a>
+                <a 
+                  href="https://www.instagram.com/bloodbridgenaija?igsh=cnZyZGhxdTF5dndj" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <span className="text-sm">i</span>
+                </a>
+                <a 
+                  href="https://x.com/bloodbridg2438?s=09" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
                   <span className="text-sm">x</span>
-                </div>
+                </a>
               </div>
             </div>
           </div>
