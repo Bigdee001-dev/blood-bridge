@@ -86,30 +86,25 @@ const Landing = () => {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-white shadow-sm border-b">
         <div className="flex items-center gap-3">
-          <div className="relative w-10 h-10 flex items-center justify-center">
+          <div className="w-12 h-12 flex items-center justify-center">
             <img 
-              src="/lovable-uploads/03edd7df-814d-436c-b314-bbccd533d65a.png" 
+              src="/lovable-uploads/5a270a74-6bee-4b12-a0b5-f1d10ea44e22.png" 
               alt="BloodBridge Logo"
-              className="w-8 h-8 object-contain"
+              className="h-10 object-contain"
             />
-            <Heart className="absolute -top-1 -right-1 w-4 h-4 text-blood-red animate-pulse" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-primary text-xl font-bold tracking-wide">BloodBridge Naija</span>
-            <span className="text-muted-foreground text-xs">Saving Lives Through Technology</span>
           </div>
         </div>
         
         <div className="hidden md:flex items-center gap-6">
-          <Link to="/" className="text-foreground hover:text-blood-red transition-colors flex items-center gap-1">
+          <Link to="/" className="text-foreground hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
             <Heart className="w-4 h-4" />
             Home
           </Link>
-          <Link to="/about" className="text-foreground hover:text-blood-red transition-colors flex items-center gap-1">
+          <Link to="/about" className="text-foreground hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
             <Users className="w-4 h-4" />
             About
           </Link>
-          <Link to="/blog" className="text-foreground hover:text-blood-red transition-colors flex items-center gap-1">
+          <Link to="/blog" className="text-foreground hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
             <Shield className="w-4 h-4" />
             Blog
           </Link>
@@ -117,13 +112,13 @@ const Landing = () => {
         
         <div className="flex items-center gap-3">
           <Link to="/donor-signup">
-            <Button className="bg-blood-red hover:bg-blood-red/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+            <Button className="bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
               <Heart className="w-4 h-4" />
               Donate Blood
             </Button>
           </Link>
           <Link to="/hospital-signup">
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+            <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
               <MapPin className="w-4 h-4" />
               Hospital Portal
             </Button>
@@ -137,24 +132,24 @@ const Landing = () => {
       </nav>
 
       {/* Hero Section */}
-      <div className="px-6 py-20 bg-gray-50">
+      <div className="px-6 py-20 bg-gradient-to-r from-red-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6 leading-tight">
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 To be a hero, save a life
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Be the reason another person lives, come rescue others with just your blood!
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/donor-signup">
-                  <Button size="lg" className="bg-blood-red hover:bg-blood-red/90 text-white px-8 py-4 text-lg w-full sm:w-auto rounded-full">
+                  <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg w-full sm:w-auto rounded-full">
                     Donate now
                   </Button>
                 </Link>
                 <Link to="/hospital-signup">
-                  <Button size="lg" variant="outline" className="border-muted-foreground text-muted-foreground hover:bg-muted px-8 py-4 text-lg w-full sm:w-auto rounded-full">
+                  <Button size="lg" variant="outline" className="border-gray-400 text-gray-700 hover:bg-gray-100 px-8 py-4 text-lg w-full sm:w-auto rounded-full">
                     Partner as a hospital
                   </Button>
                 </Link>
@@ -162,11 +157,12 @@ const Landing = () => {
             </div>
             
             <div className="relative">
-              <img 
-                src="/lovable-uploads/03edd7df-814d-436c-b314-bbccd533d65a.png" 
-                alt="Blood donation hero image"
-                className="w-full h-auto rounded-2xl shadow-2xl"
-              />
+              <div className="bg-gradient-to-br from-red-100 to-blue-100 rounded-2xl p-8 shadow-2xl">
+                <Heart className="w-32 h-32 text-red-600 mx-auto" />
+                <p className="text-center text-gray-700 mt-4 font-semibold">
+                  Your blood can save up to 3 lives
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -175,37 +171,37 @@ const Landing = () => {
       {/* How You Can Save A Life Section */}
       <div className="px-6 py-20 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
             How You Can Save A Life
           </h2>
           
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <div className="text-center">
-              <div className="w-20 h-20 bg-primary/10 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-3xl font-bold text-primary">1</span>
+              <div className="w-20 h-20 bg-red-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                <span className="text-3xl font-bold text-red-600">1</span>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-primary">Create and Account</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Create an Account</h3>
+              <p className="text-gray-600">
                 With our quick registration framework, you can sign up and get instant notification for blood donation requests within your environment and save a life.
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-20 h-20 bg-primary/10 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-3xl font-bold text-primary">2</span>
+              <div className="w-20 h-20 bg-blue-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                <span className="text-3xl font-bold text-blue-600">2</span>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-primary">Real time donation and matching</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Real time donation and matching</h3>
+              <p className="text-gray-600">
                 Every 2mins a human like you needs blood to survive somewhere within your environment! Nearby eligible donors get instant notifications.
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-20 h-20 bg-primary/10 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-3xl font-bold text-primary">3</span>
+              <div className="w-20 h-20 bg-green-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                <span className="text-3xl font-bold text-green-600">3</span>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-primary">Donate and track</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Donate and track</h3>
+              <p className="text-gray-600">
                 Accept a match, donate blood, and see your impact. Track your donation history and earn badges.
               </p>
             </div>
@@ -218,27 +214,26 @@ const Landing = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 For Donors
               </h2>
-              <p className="text-xl text-muted-foreground mb-6">
+              <p className="text-xl text-gray-600 mb-6">
                 You don't need superpowers to save a life. Just your phone and your willingness to help.
               </p>
-              <p className="text-muted-foreground mb-8">
+              <p className="text-gray-600 mb-8">
                 Receive alerts, donate locally, and track your impact.
               </p>
               <Link to="/donor-signup">
-                <Button className="bg-success-green hover:bg-success-green/90 text-white px-8 py-4 rounded-full">
+                <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full">
                   Become a Donor Now
                 </Button>
               </Link>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/99502a96-62e5-45e1-8f9d-32e6a2cb1004.png" 
-                alt="For Donors"
-                className="w-full h-auto rounded-2xl shadow-xl"
-              />
+              <div className="bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl p-12 shadow-xl">
+                <Users className="w-24 h-24 text-green-600 mx-auto mb-4" />
+                <p className="text-center text-gray-700 font-semibold">Join thousands of heroes saving lives</p>
+              </div>
             </div>
           </div>
         </div>
@@ -249,24 +244,23 @@ const Landing = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative md:order-1">
-              <img 
-                src="/lovable-uploads/99502a96-62e5-45e1-8f9d-32e6a2cb1004.png" 
-                alt="For Hospitals"
-                className="w-full h-auto rounded-2xl shadow-xl"
-              />
+              <div className="bg-gradient-to-br from-blue-100 to-red-100 rounded-2xl p-12 shadow-xl">
+                <Shield className="w-24 h-24 text-blue-600 mx-auto mb-4" />
+                <p className="text-center text-gray-700 font-semibold">Fast, reliable blood matching</p>
+              </div>
             </div>
             <div className="md:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 For Hospitals
               </h2>
-              <p className="text-xl text-muted-foreground mb-6">
+              <p className="text-xl text-gray-600 mb-6">
                 Tired of blood shortages during emergencies? Post urgent requests. Get matched to nearby donors.
               </p>
-              <p className="text-muted-foreground mb-8">
+              <p className="text-gray-600 mb-8">
                 Faster response. Better outcomes. Peace of mind.
               </p>
               <Link to="/hospital-signup">
-                <Button className="bg-blood-red hover:bg-blood-red/90 text-white px-8 py-4 rounded-full">
+                <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full">
                   Register as a hospital
                 </Button>
               </Link>
@@ -280,31 +274,30 @@ const Landing = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Giving blood used to be difficult; now it's just a tap away
               </h2>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-xl text-gray-600 mb-8">
                 Start your journey and be part of Nigeria's life-saving movement
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/donor-signup">
-                  <Button size="lg" className="bg-blood-red hover:bg-blood-red/90 text-white px-8 py-4 rounded-full">
+                  <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full">
                     Donate now
                   </Button>
                 </Link>
                 <Link to="/hospital-signup">
-                  <Button size="lg" variant="outline" className="border-muted-foreground text-muted-foreground hover:bg-muted px-8 py-4 rounded-full">
+                  <Button size="lg" variant="outline" className="border-gray-400 text-gray-700 hover:bg-gray-100 px-8 py-4 rounded-full">
                     Partner as a hospital
                   </Button>
                 </Link>
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/99502a96-62e5-45e1-8f9d-32e6a2cb1004.png" 
-                alt="Easy blood donation"
-                className="w-full h-auto rounded-2xl shadow-xl"
-              />
+              <div className="bg-gradient-to-br from-red-100 to-green-100 rounded-2xl p-12 shadow-xl">
+                <MapPin className="w-24 h-24 text-red-600 mx-auto mb-4" />
+                <p className="text-center text-gray-700 font-semibold">Find donors near you instantly</p>
+              </div>
             </div>
           </div>
         </div>
@@ -313,37 +306,41 @@ const Landing = () => {
       {/* Testimonials Section */}
       <div className="px-6 py-20 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12">
-            Testimonials
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+            What Our Users Say
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.slice(0, 3).map((testimonial, index) => (
-              <Card key={index} className="p-6 shadow-lg">
-                <CardContent className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200">
-                      <img 
-                        src={testimonial.avatar} 
-                        alt={`Avatar of ${testimonial.author}`}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.currentTarget.style.display = 'none';
-                          e.currentTarget.parentElement!.className = `w-16 h-16 ${testimonial.bgColor} rounded-full flex items-center justify-center`;
-                          e.currentTarget.parentElement!.innerHTML = '<span class="text-white text-xl">👤</span>';
-                        }}
-                      />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold">{testimonial.author}</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-muted-foreground italic">
-                    "{testimonial.quote}"
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <ScrollArea className="h-96 w-full rounded-md border p-4">
+              <div className="space-y-6">
+                {testimonials.map((testimonial, index) => (
+                  <Card key={index} className="p-6">
+                    <CardContent className="space-y-4">
+                      <div className="flex items-center gap-4">
+                        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200">
+                          <img 
+                            src={testimonial.avatar} 
+                            alt={`Avatar of ${testimonial.author}`}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              e.currentTarget.style.display = 'none';
+                              e.currentTarget.parentElement!.className = `w-16 h-16 ${testimonial.bgColor} rounded-full flex items-center justify-center`;
+                              e.currentTarget.parentElement!.innerHTML = '<span class="text-white text-xl">👤</span>';
+                            }}
+                          />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold">{testimonial.author}</p>
+                        </div>
+                      </div>
+                      <p className="text-sm text-gray-600 italic">
+                        "{testimonial.quote}"
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </ScrollArea>
           </div>
         </div>
       </div>
@@ -353,53 +350,55 @@ const Landing = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 The Impact Of Your Actions
               </h2>
-              <p className="text-xl text-muted-foreground mb-6">
+              <p className="text-xl text-gray-600 mb-6">
                 Just one pint of your blood can save up to 3 lives.
               </p>
-              <p className="text-muted-foreground mb-8">
+              <p className="text-gray-600 mb-8">
                 That's a child surviving an accident, a mother recovering from childbirth, or a patient completing surgery safely.
               </p>
-              <p className="text-xl font-semibold text-primary mb-8">
+              <p className="text-xl font-semibold text-gray-900 mb-8">
                 👉 Be the reason someone lives today
               </p>
               
               {/* Stats Cards */}
               <div className="space-y-4">
-                <div className="bg-success-green/20 rounded-lg p-4 flex items-center justify-between">
-                  <span className="text-success-green font-semibold">Pints Donated by donor heroes</span>
-                  <span className="text-2xl font-bold text-success-green">
+                <div className="bg-green-100 rounded-lg p-4 flex items-center justify-between">
+                  <span className="text-green-700 font-semibold">Pints Donated by donor heroes</span>
+                  <span className="text-2xl font-bold text-green-700">
                     <AnimatedCounter end={500} suffix="+" />
                   </span>
                 </div>
-                <div className="bg-primary/20 rounded-lg p-4 flex items-center justify-between">
-                  <span className="text-primary font-semibold">Hospitals using the dashboard</span>
-                  <span className="text-2xl font-bold text-primary">
+                <div className="bg-blue-100 rounded-lg p-4 flex items-center justify-between">
+                  <span className="text-blue-700 font-semibold">Hospitals using the dashboard</span>
+                  <span className="text-2xl font-bold text-blue-700">
                     <AnimatedCounter end={40} suffix="+" />
                   </span>
                 </div>
-                <div className="bg-success-green/20 rounded-lg p-4 flex items-center justify-between">
-                  <span className="text-success-green font-semibold">Lives saved in 3 months</span>
-                  <span className="text-2xl font-bold text-success-green">
+                <div className="bg-green-100 rounded-lg p-4 flex items-center justify-between">
+                  <span className="text-green-700 font-semibold">Lives saved in 3 months</span>
+                  <span className="text-2xl font-bold text-green-700">
                     <AnimatedCounter end={700} suffix="+" />
                   </span>
                 </div>
-                <div className="bg-success-green/20 rounded-lg p-4 flex items-center justify-between">
-                  <span className="text-success-green font-semibold">Match Rate on urgent requests</span>
-                  <span className="text-2xl font-bold text-success-green">
+                <div className="bg-green-100 rounded-lg p-4 flex items-center justify-between">
+                  <span className="text-green-700 font-semibold">Match Rate on urgent requests</span>
+                  <span className="text-2xl font-bold text-green-700">
                     <AnimatedCounter end={90} suffix="%" />
                   </span>
                 </div>
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/8be75413-da94-4e3c-acf9-5c0f615461d4.png" 
-                alt="Impact of blood donation"
-                className="w-full h-auto rounded-2xl shadow-xl"
-              />
+              <div className="bg-gradient-to-br from-red-100 to-blue-100 rounded-2xl p-12 shadow-xl text-center">
+                <Heart className="w-32 h-32 text-red-600 mx-auto mb-6" />
+                <div className="text-6xl font-bold text-gray-900 mb-2">
+                  <AnimatedCounter end={3} />
+                </div>
+                <p className="text-gray-700 font-semibold">Lives saved per donation</p>
+              </div>
             </div>
           </div>
         </div>
@@ -408,7 +407,7 @@ const Landing = () => {
       {/* FAQ Section */}
       <div className="px-6 py-20 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
             Frequently Asked Questions
           </h2>
           
@@ -417,7 +416,7 @@ const Landing = () => {
               <AccordionTrigger className="text-left font-semibold">
                 At what age do I start donating blood?
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-gray-600">
                 To donate blood, you need to be between the ages of 17 and 65 years and must weigh at least 50kg before donation.
               </AccordionContent>
             </AccordionItem>
@@ -426,7 +425,7 @@ const Landing = () => {
               <AccordionTrigger className="text-left font-semibold">
                 How often do I donate blood?
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-gray-600">
                 Donation of blood for men can be every 12 weeks, while women can donate every 16 weeks.
               </AccordionContent>
             </AccordionItem>
@@ -435,7 +434,7 @@ const Landing = () => {
               <AccordionTrigger className="text-left font-semibold">
                 How long does it take to donate blood?
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-gray-600">
                 Whole Blood donation usually takes between 45-60 minutes, while apheresis takes 1-2 hours.
               </AccordionContent>
             </AccordionItem>
@@ -444,7 +443,7 @@ const Landing = () => {
               <AccordionTrigger className="text-left font-semibold">
                 What happens before donating blood?
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-gray-600">
                 Before donating blood, all donors undergo a basic health screening, conducted by a health professional to check for temperature, heart rate, blood pressure, pulse rate, respiratory rate and hemoglobin levels. These records are stored on the donor's online profile.
               </AccordionContent>
             </AccordionItem>
@@ -453,7 +452,7 @@ const Landing = () => {
               <AccordionTrigger className="text-left font-semibold">
                 How are infectious diseases tested on donated blood?
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-gray-600">
                 All donated blood is tested for multiple disease markers. The blood is screened for common diseases such as Hepatitis B, Hepatitis C, HIV, type 1&2, syphilis, human T-lymphotropic virus, Babesia, before transfusion.
               </AccordionContent>
             </AccordionItem>
@@ -462,7 +461,7 @@ const Landing = () => {
               <AccordionTrigger className="text-left font-semibold">
                 How do I know I'm compatible?
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-gray-600">
                 Further Testing are done to identify the donor's blood group and Rh type to determine compatibility with the recipient. More screening is done for atypical or unusual red cell antibodies.
               </AccordionContent>
             </AccordionItem>
@@ -471,28 +470,16 @@ const Landing = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-primary text-white px-6 py-12">
+      <footer className="bg-gray-900 text-white px-6 py-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 flex items-center justify-center">
-                  <svg 
-                    width="32" 
-                    height="32" 
-                    viewBox="0 0 32 32" 
-                    fill="none" 
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="text-blood-red"
-                  >
-                    <path 
-                      d="M16 2C16 2 8 10 8 18C8 22.4183 11.5817 26 16 26C20.4183 26 24 22.4183 24 18C24 10 16 2 16 2Z" 
-                      fill="currentColor"
-                    />
-                    <circle cx="13" cy="16" r="2" fill="rgba(255,255,255,0.3)" />
-                  </svg>
-                </div>
-                <span className="text-xl font-semibold">BloodBridge</span>
+                <img 
+                  src="/lovable-uploads/5a270a74-6bee-4b12-a0b5-f1d10ea44e22.png" 
+                  alt="BloodBridge Logo"
+                  className="h-8 object-contain"
+                />
               </div>
               <p className="text-white/80 text-sm">Saving lives one donation at a time</p>
             </div>
