@@ -93,6 +93,7 @@ const Landing = () => {
               className="h-10 object-contain"
             />
           </div>
+          <span className="text-foreground text-xl lg:text-2xl font-black hidden sm:block">BloodBridge</span>
         </div>
         
         <div className="hidden md:flex items-center gap-6">

@@ -19,11 +19,11 @@ const DashboardLayout = ({ children, userType }: DashboardLayoutProps) => {
           <header className="h-16 bg-white border-b border-border flex items-center justify-between px-4 lg:px-6">
             <div className="flex items-center gap-4">
               <SidebarTrigger className="lg:hidden" />
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-blood-red rounded-full flex items-center justify-center">
-                  <span className="text-white text-lg font-bold">+</span>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-blood-red rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white text-xl font-black">+</span>
                 </div>
-                <span className="text-foreground text-xl font-semibold hidden sm:block">BloodBridge</span>
+                <span className="text-foreground text-xl lg:text-2xl font-black hidden sm:block">BloodBridge</span>
               </div>
             </div>
             
@@ -32,7 +32,7 @@ const DashboardLayout = ({ children, userType }: DashboardLayoutProps) => {
               <div className="w-8 h-8 bg-muted rounded-full hidden sm:block"></div>
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-success-green rounded-full"></div>
-                <span className="text-foreground hidden sm:block">A+</span>
+                <span className="text-foreground font-semibold hidden sm:block">A+</span>
               </div>
             </div>
           </header>
