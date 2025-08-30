@@ -19,6 +19,8 @@ import BloodInventory from "./pages/BloodInventory";
 import HospitalSettings from "./pages/HospitalSettings";
 import UrgentBloodRequest from "./pages/UrgentBloodRequest";
 import ScheduleDonation from "./pages/ScheduleDonation";
+import DonationHistory from "./pages/DonationHistory";
+import MyRequests from "./pages/MyRequests";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +45,8 @@ const App = () => (
           <Route path="/hospital-settings" element={<HospitalSettings />} />
           <Route path="/urgent-blood-request" element={<UrgentBloodRequest />} />
           <Route path="/schedule-donation" element={<ScheduleDonation />} />
+          <Route path="/donation-history" element={<DonationHistory />} />
+          <Route path="/my-requests" element={<MyRequests />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
