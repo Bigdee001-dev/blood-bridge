@@ -159,7 +159,11 @@ const Landing = () => {
             
             <div className="relative">
               <div className="bg-gradient-to-br from-red-100 to-blue-100 rounded-2xl p-8 shadow-2xl">
-                <Heart className="w-32 h-32 text-red-600 mx-auto" />
+                <img 
+                  src="/lovable-uploads/1663e7d0-ffe2-4c81-8b20-2dd7c9b9d669.png" 
+                  alt="Blood donation scene showing healthcare professional with patient"
+                  className="w-full h-64 object-cover rounded-xl mb-4"
+                />
                 <p className="text-center text-gray-700 mt-4 font-semibold">
                   Your blood can save up to 3 lives
                 </p>
@@ -231,8 +235,12 @@ const Landing = () => {
               </Link>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl p-12 shadow-xl">
-                <Users className="w-24 h-24 text-green-600 mx-auto mb-4" />
+              <div className="bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl p-8 shadow-xl">
+                <img 
+                  src="/lovable-uploads/30e3db3f-c976-48b1-804d-1d6f4501640f.png" 
+                  alt="Blood donation in community setting"
+                  className="w-full h-56 object-cover rounded-xl mb-4"
+                />
                 <p className="text-center text-gray-700 font-semibold">Join thousands of heroes saving lives</p>
               </div>
             </div>
@@ -245,8 +253,12 @@ const Landing = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative md:order-1">
-              <div className="bg-gradient-to-br from-blue-100 to-red-100 rounded-2xl p-12 shadow-xl">
-                <Shield className="w-24 h-24 text-blue-600 mx-auto mb-4" />
+              <div className="bg-gradient-to-br from-blue-100 to-red-100 rounded-2xl p-8 shadow-xl">
+                <img 
+                  src="/lovable-uploads/1cafaa86-c65e-44b3-97cd-b51c5738dea0.png" 
+                  alt="Healthcare team collaboration in modern hospital"
+                  className="w-full h-56 object-cover rounded-xl mb-4"
+                />
                 <p className="text-center text-gray-700 font-semibold">Fast, reliable blood matching</p>
               </div>
             </div>
@@ -295,8 +307,12 @@ const Landing = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-red-100 to-green-100 rounded-2xl p-12 shadow-xl">
-                <MapPin className="w-24 h-24 text-red-600 mx-auto mb-4" />
+              <div className="bg-gradient-to-br from-red-100 to-green-100 rounded-2xl p-8 shadow-xl">
+                <img 
+                  src="/lovable-uploads/8e051e1b-f99a-4d53-884a-eda72c200b44.png" 
+                  alt="Healthcare professional consulting with patient"
+                  className="w-full h-56 object-cover rounded-xl mb-4"
+                />
                 <p className="text-center text-gray-700 font-semibold">Find donors near you instantly</p>
               </div>
             </div>
@@ -393,8 +409,12 @@ const Landing = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-red-100 to-blue-100 rounded-2xl p-12 shadow-xl text-center">
-                <Heart className="w-32 h-32 text-red-600 mx-auto mb-6" />
+              <div className="bg-gradient-to-br from-red-100 to-blue-100 rounded-2xl p-8 shadow-xl text-center">
+                <img 
+                  src="/lovable-uploads/e4b4dfa7-3efa-4577-bfe0-258288e5b2dc.png" 
+                  alt="Healthcare professional providing quality medical care"
+                  className="w-full h-48 object-cover rounded-xl mb-4"
+                />
                 <div className="text-6xl font-bold text-gray-900 mb-2">
                   <AnimatedCounter end={3} />
                 </div>

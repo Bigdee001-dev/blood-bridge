@@ -48,8 +48,19 @@ const HospitalDashboard = () => {
   return (
     <DashboardLayout userType="hospital">
       <div className="max-w-7xl mx-auto space-y-6">
-        {/* Activity Feed */}
+        {/* Activity Feed with Hero Image */}
         <div className="mb-6">
+          <div className="relative mb-6">
+            <img 
+              src="/lovable-uploads/1cafaa86-c65e-44b3-97cd-b51c5738dea0.png" 
+              alt="Healthcare team collaborating with medical technology"
+              className="w-full h-48 object-cover rounded-2xl shadow-xl"
+            />
+            <div className="absolute inset-0 bg-black/20 rounded-2xl flex items-center justify-center">
+              <h1 className="text-white text-2xl md:text-4xl font-bold text-center">Hospital Dashboard</h1>
+            </div>
+          </div>
+          
           <div className="flex items-center gap-4 mb-4">
             <h2 className="text-lg font-semibold">Activity Feed</h2>
             <Badge variant="outline" className="text-green-600 border-green-200">

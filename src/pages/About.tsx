@@ -68,6 +68,13 @@ const About = () => {
       {/* Hero Section */}
       <div className="px-6 py-20 text-center">
         <div className="max-w-4xl mx-auto">
+          <div className="mb-8">
+            <img 
+              src="/lovable-uploads/9e04391c-4b19-475f-9a9e-2a0cf7a02c59.png" 
+              alt="Healthcare team meeting in professional hospital setting"
+              className="w-full h-64 object-cover rounded-2xl shadow-2xl mx-auto mb-6"
+            />
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             About BloodBridge Naija
           </h1>
@@ -102,13 +109,22 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">What We Are</h2>
               <div className="w-24 h-1 bg-blood-red mx-auto"></div>
             </div>
-            <Card className="p-8">
-              <CardContent>
-                <p className="text-lg text-foreground leading-relaxed text-center">
-                  We're a platform - a digital health platform designed to improve emergency blood access in Nigeria by connecting voluntary donors with hospitals and blood banks in real time.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <Card className="p-8">
+                <CardContent>
+                  <p className="text-lg text-foreground leading-relaxed">
+                    We're a platform - a digital health platform designed to improve emergency blood access in Nigeria by connecting voluntary donors with hospitals and blood banks in real time.
+                  </p>
+                </CardContent>
+              </Card>
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/6193fb57-cbec-4ab1-a1eb-3faa2da8115b.png" 
+                  alt="Healthcare worker in professional medical environment"
+                  className="w-full h-64 object-cover rounded-2xl shadow-xl"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Vision and Mission */}
@@ -138,11 +154,11 @@ const About = () => {
             </Card>
           </div>
 
-          {/* How We Achieve That */}
+            {/* How We Achieve That */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-center text-primary mb-12">How We Achieve That</h2>
             
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="p-8 bg-success-green/5 border-success-green/20">
                 <CardContent className="space-y-4">
                   <div className="flex items-center gap-3 mb-4">
@@ -166,6 +182,14 @@ const About = () => {
                   </p>
                 </CardContent>
               </Card>
+            </div>
+            
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/a4ebf398-98fb-4b4c-916a-3573bf3e5e91.png" 
+                alt="Modern surgical room with advanced medical equipment"
+                className="w-full max-w-2xl h-48 object-cover rounded-2xl shadow-xl"
+              />
             </div>
           </div>
 
