@@ -1,8 +1,9 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link } from "react-router-dom";
-import { Heart, Users, MapPin, Shield, Target, Eye, CheckCircle } from "lucide-react";
+import { Heart, Users, MapPin, Shield, Target, Eye, CheckCircle, Menu } from "lucide-react";
 
 const About = () => {
   return (
@@ -35,25 +36,34 @@ const About = () => {
           </Link>
         </div>
         
-        <div className="flex items-center gap-3">
-          <Link to="/donor-signup">
-            <Button className="bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
-              <Heart className="w-4 h-4" />
-              Donate Blood
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon">
+              <Menu className="h-6 w-6" />
             </Button>
-          </Link>
-          <Link to="/hospital-signup">
-            <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
-              Hospital Portal
-            </Button>
-          </Link>
-          <Link to="/signin">
-            <Button variant="ghost" className="text-foreground hover:bg-muted">
-              SignIn
-            </Button>
-          </Link>
-        </div>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <div className="flex flex-col gap-4 mt-8">
+              <Link to="/donor-signup" className="w-full">
+                <Button className="w-full bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+                  <Heart className="w-4 h-4" />
+                  Donor Portal
+                </Button>
+              </Link>
+              <Link to="/hospital-signup" className="w-full">
+                <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+                  <MapPin className="w-4 h-4" />
+                  Hospital Portal
+                </Button>
+              </Link>
+              <Link to="/signin" className="w-full">
+                <Button variant="ghost" className="w-full text-foreground hover:bg-muted">
+                  SignIn
+                </Button>
+              </Link>
+            </div>
+          </SheetContent>
+        </Sheet>
       </nav>
 
       {/* Hero Section */}
