@@ -1,70 +1,15 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import MainNavigation from "@/components/MainNavigation";
 import { Link } from "react-router-dom";
-import { Heart, Users, MapPin, Shield, Target, Eye, CheckCircle, Menu } from "lucide-react";
+import { Heart, Users, MapPin, Shield, Target, Eye, CheckCircle } from "lucide-react";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-deep-blue via-primary to-purple-900">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-white shadow-sm border-b">
-        <div className="flex items-center gap-3">
-          <div className="w-12 h-12 flex items-center justify-center">
-            <img 
-              src="/lovable-uploads/5a270a74-6bee-4b12-a0b5-f1d10ea44e22.png" 
-              alt="BloodBridge Logo"
-              className="h-10 object-contain"
-            />
-          </div>
-          <span className="text-foreground text-xl lg:text-2xl font-black hidden sm:block">BloodBridge</span>
-        </div>
-        
-        <div className="hidden md:flex items-center gap-6">
-          <Link to="/" className="text-foreground hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
-            <Heart className="w-4 h-4" />
-            Home
-          </Link>
-          <Link to="/about" className="text-foreground hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
-            <Users className="w-4 h-4" />
-            About
-          </Link>
-          <Link to="/blog" className="text-foreground hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
-            <Shield className="w-4 h-4" />
-            Blog
-          </Link>
-        </div>
-        
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon">
-              <Menu className="h-6 w-6" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-            <div className="flex flex-col gap-4 mt-8">
-              <Link to="/donor-signup" className="w-full">
-                <Button className="w-full bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
-                  <Heart className="w-4 h-4" />
-                  Donor Portal
-                </Button>
-              </Link>
-              <Link to="/hospital-signup" className="w-full">
-                <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
-                  <MapPin className="w-4 h-4" />
-                  Hospital Portal
-                </Button>
-              </Link>
-              <Link to="/signin" className="w-full">
-                <Button variant="ghost" className="w-full text-foreground hover:bg-muted">
-                  SignIn
-                </Button>
-              </Link>
-            </div>
-          </SheetContent>
-        </Sheet>
-      </nav>
+      <MainNavigation />
 
       {/* Hero Section */}
       <div className="px-6 py-20 text-center">
