@@ -8,42 +8,28 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-deep-blue via-primary to-purple-900">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-gradient-to-r from-blood-red to-deep-blue backdrop-blur-sm border-b border-blood-red/30 shadow-lg">
+      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-white shadow-sm border-b">
         <div className="flex items-center gap-3">
-          <div className="relative w-10 h-10 flex items-center justify-center bg-white/20 rounded-full backdrop-blur-sm">
-            <svg 
-              width="28" 
-              height="28" 
-              viewBox="0 0 32 32" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-white drop-shadow-lg"
-            >
-              <path 
-                d="M16 2C16 2 8 10 8 18C8 22.4183 11.5817 26 16 26C20.4183 26 24 22.4183 24 18C24 10 16 2 16 2Z" 
-                fill="currentColor"
-              />
-              <circle cx="13" cy="16" r="2" fill="rgba(255,255,255,0.4)" />
-              <path d="M18 14c1 0 2 1 2 2s-1 2-2 2" stroke="rgba(255,255,255,0.3)" strokeWidth="1" fill="none"/>
-            </svg>
-            <Heart className="absolute -top-1 -right-1 w-4 h-4 text-red-300 animate-pulse" />
+          <div className="w-12 h-12 flex items-center justify-center">
+            <img 
+              src="/lovable-uploads/5a270a74-6bee-4b12-a0b5-f1d10ea44e22.png" 
+              alt="BloodBridge Logo"
+              className="h-10 object-contain"
+            />
           </div>
-          <div className="flex flex-col">
-            <span className="text-white text-xl font-bold tracking-wide">BloodBridge Naija</span>
-            <span className="text-white/70 text-xs">Saving Lives Through Technology</span>
-          </div>
+          <span className="text-foreground text-xl lg:text-2xl font-black hidden sm:block">BloodBridge</span>
         </div>
         
         <div className="hidden md:flex items-center gap-6">
-          <Link to="/" className="text-white hover:text-red-200 transition-colors flex items-center gap-1">
+          <Link to="/" className="text-foreground hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
             <Heart className="w-4 h-4" />
             Home
           </Link>
-          <Link to="/about" className="text-white hover:text-red-200 transition-colors flex items-center gap-1">
+          <Link to="/about" className="text-foreground hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
             <Users className="w-4 h-4" />
             About
           </Link>
-          <Link to="/blog" className="text-white hover:text-red-200 transition-colors flex items-center gap-1">
+          <Link to="/blog" className="text-foreground hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
             <Shield className="w-4 h-4" />
             Blog
           </Link>
@@ -51,15 +37,20 @@ const About = () => {
         
         <div className="flex items-center gap-3">
           <Link to="/donor-signup">
-            <Button className="bg-success-green/90 hover:bg-success-green text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+            <Button className="bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
               <Heart className="w-4 h-4" />
               Donate Blood
             </Button>
           </Link>
           <Link to="/hospital-signup">
-            <Button className="bg-white/20 hover:bg-white/30 text-white border border-white/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+            <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
               <MapPin className="w-4 h-4" />
               Hospital Portal
+            </Button>
+          </Link>
+          <Link to="/signin">
+            <Button variant="ghost" className="text-foreground hover:bg-muted">
+              SignIn
             </Button>
           </Link>
         </div>
