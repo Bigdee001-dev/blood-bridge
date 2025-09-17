@@ -7,28 +7,28 @@ import { Heart, Users, Shield, MapPin, Menu } from "lucide-react";
 
 const MainNavigation = () => {
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-white shadow-sm border-b">
-      <div className="flex items-center gap-3">
-        <div className="w-12 h-12 flex items-center justify-center">
+    <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-primary shadow-lg border-b border-primary/20">
+      <div className="flex items-center gap-4">
+        <div className="w-16 h-16 flex items-center justify-center">
           <img 
             src="/lovable-uploads/5a270a74-6bee-4b12-a0b5-f1d10ea44e22.png" 
             alt="BloodBridge Logo"
-            className="h-10 object-contain"
+            className="h-14 object-contain drop-shadow-md"
           />
         </div>
-        <span className="text-foreground text-xl lg:text-2xl font-black hidden sm:block">BloodBridge</span>
+        <span className="text-primary-foreground text-xl lg:text-3xl font-black hidden sm:block drop-shadow-sm">BloodBridge</span>
       </div>
       
       <div className="hidden md:flex items-center gap-6">
-        <Link to="/" className="text-foreground hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
+        <Link to="/" className="text-primary-foreground/90 hover:text-white transition-colors flex items-center gap-1 font-medium">
           <Heart className="w-4 h-4" />
           Home
         </Link>
-        <Link to="/about" className="text-foreground hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
+        <Link to="/about" className="text-primary-foreground/90 hover:text-white transition-colors flex items-center gap-1 font-medium">
           <Users className="w-4 h-4" />
           About
         </Link>
-        <Link to="/blog" className="text-foreground hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
+        <Link to="/blog" className="text-primary-foreground/90 hover:text-white transition-colors flex items-center gap-1 font-medium">
           <Shield className="w-4 h-4" />
           Blog
         </Link>
@@ -36,19 +36,19 @@ const MainNavigation = () => {
       
       <div className="hidden lg:flex items-center gap-3">
         <Link to="/donor-signup">
-          <Button className="bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+          <Button className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
             <Heart className="w-4 h-4" />
             Donor Portal
           </Button>
         </Link>
         <Link to="/hospital-signup">
-          <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+          <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
             <MapPin className="w-4 h-4" />
             Hospital Portal
           </Button>
         </Link>
         <Link to="/signin">
-          <Button variant="ghost" className="text-foreground hover:bg-muted">
+          <Button variant="ghost" className="text-primary-foreground hover:bg-white/20">
             SignIn
           </Button>
         </Link>
@@ -58,7 +58,7 @@ const MainNavigation = () => {
       <div className="lg:hidden">
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/20">
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
@@ -66,15 +66,15 @@ const MainNavigation = () => {
             <div className="flex flex-col gap-4 mt-8">
               {/* Navigation Links */}
               <div className="flex flex-col gap-2 pb-4 border-b">
-                <Link to="/" className="text-foreground hover:text-red-600 transition-colors flex items-center gap-2 p-2 rounded-lg hover:bg-muted">
+                <Link to="/" className="text-foreground hover:text-accent transition-colors flex items-center gap-2 p-2 rounded-lg hover:bg-muted">
                   <Heart className="w-4 h-4" />
                   Home
                 </Link>
-                <Link to="/about" className="text-foreground hover:text-red-600 transition-colors flex items-center gap-2 p-2 rounded-lg hover:bg-muted">
+                <Link to="/about" className="text-foreground hover:text-accent transition-colors flex items-center gap-2 p-2 rounded-lg hover:bg-muted">
                   <Users className="w-4 h-4" />
                   About
                 </Link>
-                <Link to="/blog" className="text-foreground hover:text-red-600 transition-colors flex items-center gap-2 p-2 rounded-lg hover:bg-muted">
+                <Link to="/blog" className="text-foreground hover:text-accent transition-colors flex items-center gap-2 p-2 rounded-lg hover:bg-muted">
                   <Shield className="w-4 h-4" />
                   Blog
                 </Link>
@@ -82,13 +82,13 @@ const MainNavigation = () => {
               
               {/* Action Buttons */}
               <Link to="/donor-signup" className="w-full">
-                <Button className="w-full bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
                   <Heart className="w-4 h-4" />
                   Donor Portal
                 </Button>
               </Link>
               <Link to="/hospital-signup" className="w-full">
-                <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
                   <MapPin className="w-4 h-4" />
                   Hospital Portal
                 </Button>
