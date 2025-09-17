@@ -7,19 +7,19 @@ import { Heart, Users, Shield, MapPin, Menu } from "lucide-react";
 
 const MainNavigation = () => {
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-primary shadow-lg border-b border-primary/20">
-      <div className="flex items-center gap-4">
-        <div className="w-16 h-16 flex items-center justify-center">
+    <nav className="sticky top-0 z-50 flex items-center justify-between px-3 py-3 bg-primary shadow-lg border-b border-primary/20">
+      <div className="flex items-center gap-2">
+        <div className="w-12 h-12 flex items-center justify-center">
           <img 
             src="/lovable-uploads/5a270a74-6bee-4b12-a0b5-f1d10ea44e22.png" 
             alt="BloodBridge Logo"
-            className="h-14 object-contain drop-shadow-md"
+            className="h-10 object-contain drop-shadow-md"
           />
         </div>
-        <span className="text-primary-foreground text-xl lg:text-3xl font-black hidden sm:block drop-shadow-sm">BloodBridge</span>
+        <span className="text-primary-foreground text-lg lg:text-2xl font-black hidden sm:block drop-shadow-sm">BloodBridge</span>
       </div>
       
-      <div className="hidden md:flex items-center gap-6">
+      <div className="hidden md:flex items-center gap-4">
         <Link to="/" className="text-primary-foreground/90 hover:text-white transition-colors flex items-center gap-1 font-medium">
           <Heart className="w-4 h-4" />
           Home
@@ -34,7 +34,7 @@ const MainNavigation = () => {
         </Link>
       </div>
       
-      <div className="hidden lg:flex items-center gap-3">
+      <div className="hidden lg:flex items-center gap-2">
         <Link to="/donor-signup">
           <Button className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
             <Heart className="w-4 h-4" />
