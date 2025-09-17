@@ -9,7 +9,7 @@ const MainNavigation = () => {
   return (
     <nav className="sticky top-0 z-50 flex items-center justify-between px-3 py-3 bg-primary shadow-lg border-b border-primary/20">
       <div className="flex items-center gap-2">
-        <div className="w-12 h-12 flex items-center justify-center">
+        <div className="flex items-center justify-center">
           <img 
             src="/lovable-uploads/5a270a74-6bee-4b12-a0b5-f1d10ea44e22.png" 
             alt="BloodBridge Logo"

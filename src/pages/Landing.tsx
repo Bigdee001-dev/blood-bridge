@@ -486,36 +486,6 @@ const Landing = () => {
                 </p>
               </div>
             </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4">Follow Us</h3>
-              <div className="flex gap-4">
-                <a 
-                  href="https://www.facebook.com/profile.php?id=61580110702321" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
-                >
-                  <span className="text-sm">f</span>
-                </a>
-                <a 
-                  href="https://www.instagram.com/bloodbridgenaija?igsh=cnZyZGhxdTF5dndj" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
-                >
-                  <span className="text-sm">i</span>
-                </a>
-                <a 
-                  href="https://x.com/bloodbridg2438?s=09" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
-                >
-                  <span className="text-sm">x</span>
-                </a>
-              </div>
-            </div>
           </div>
           
           <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/80">
