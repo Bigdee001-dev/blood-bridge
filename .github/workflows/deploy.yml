@@ -1,0 +1,208 @@
+name: Build and Deploy React App to S3
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_REGION: us-east-1
+      TF_VERSION: 1.4.0
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build frontend
+        env:
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+          NEXT_PUBLIC_WEBSOCKET_URL: ${{ secrets.NEXT_PUBLIC_WEBSOCKET_URL }}
+
+        run: |
+          npm run build
+          # If you're using Next.js static export
+          # npm run export
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
+
+      - name: Terraform Init
+        working-directory: terraform
+        run: terraform init
+
+      - name: Terraform Apply
+        working-directory: terraform
+        run: terraform apply -auto-approve
+
+      - name: Debug Terraform outputs
+        working-directory: terraform
+        run: |
+          echo "📂 Terraform working directory:"
+          pwd
+          ls -la
+          echo "📜 Terraform outputs:"
+          terraform output
+
+      - name: Get CloudFront Distribution ID from Terraform
+        working-directory: terraform
+        run: |
+          CF_ID=$(terraform output -raw cloudfront_distribution_id 2>/dev/null || true)
+          if [ -z "$CF_ID" ]; then
+            echo "❌ CloudFront Distribution ID not found in Terraform outputs!"
+            exit 1
+          fi
+          echo "✅ CloudFront Distribution ID: $CF_ID"
+          echo "cf_id=$CF_ID" >> $GITHUB_ENV
+
+      - name: Deploy to S3
+        run: aws s3 sync ./out s3://safespacefrontend --delete
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ env.cf_id }} \
+            --paths "/*"
+
+
+# name: Build and Deploy React App to S3
+
+# on:
+#     push:
+#         branches:
+#             - main
+
+# permissions:
+#     id-token: write
+#     contents: read
+
+# jobs:
+#     build-and-deploy:
+#         name: Build and Deploy
+#         runs-on: ubuntu-latest
+
+#         env:
+#             AWS_REGION: 'us-east-1'
+#             TF_VERSION: '1.4.0'
+#             TFLINT_VERSION: '0.46.1'
+#             TFSEC_VERSION: '1.28.1'
+#         steps:
+#             - name: Checkout
+#               uses: actions/checkout@v3
+
+#             - name: Set up Node.js
+#               uses: actions/setup-node@v3
+#               with:
+#                   node-version: 20
+
+#             # - name: Install Yarn
+#             #   run: npm install -g yarn
+
+#             # - name: Install dependenciess
+#             #   run: yarn install --frozen-lockfile
+
+#             # - name: Build
+#             #   run: yarn build
+#             # - name: Install dependencies Build
+#             #   run: npm install
+#             # - name: Build
+#             #   run: npm run build
+
+#             - name: Configure AWS Credentials
+#               uses: aws-actions/configure-aws-credentials@v1
+#               with:
+#                   aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#                   aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#                   aws-region: us-east-1
+
+#             - name: setup  terraform
+#               uses: hashicorp/setup-terraform@v3
+#               with:
+#                   terraform_version: ${{ env.TF_VERSION}}
+
+#             - name: format Terraform files
+#               id: fmt_recursive
+#               run: terraform fmt -recursive
+#               working-directory: terraform
+
+#             - name: Terraform format
+#               id: fmt
+#               run: terraform fmt -check
+#               working-directory: terraform
+
+#             - name: Terraform Init
+#               id: init
+#               run: terraform init
+#               working-directory: terraform
+
+#             - name: Terraform Validate
+#               id: validate
+#               run: terraform validate -no-color
+#               working-directory: terraform
+
+#             # - name: TFLINT
+#             #   run: |
+#             #       tflint --init
+#             #       tflint
+
+#             # - name: Terraform Security Scan
+#             #   run: tfsec .
+
+#             - name: Terraform Plan
+#               id: plan
+#               run: terraform plan -no-color  -out=tfplan
+#               working-directory: terraform
+
+#             - name: Terraform Apply
+#               run: terraform apply -auto-approve tfplan
+#               working-directory: terraform
+
+#             - name: Install dependencies
+#               run: npm install
+
+#             - name: Build frontend             # use tis wen front end as sent u next_public_api_url to store in gitub secret else comment out
+#               env:
+#                   NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+#               run: npm run build
+              
+#             # - name: Build Next.js app   # use tis wen front end is yet to give u next_public_api_url to store in gitub secret else comment out
+#             #   run: npm run build
+
+#             # - name: Export static site    #you're using a newer version of Next.js (v15+), which no longer uses next export as a CLI command.
+#             #   run: npm run export
+
+
+#             # - name: Deploy to S3      # use ---delete to automaticzlly Remove any files from the S3 bucket that are not present in my local ./out folder. 
+#             #   run: aws s3 sync ./out s3://safespacefrontend --delete    #Without --delete Old files in the S3 bucket stay there, even if they no longer exist in your local build. Over time, your bucket can fill with outdated assets that might still be served by CloudFront. Users might see broken or stale files if the old ones conflict with the new build.
+
+#             # - name: Deploy to S3  #use tis fr just s3 bucket witout cloudfront
+#             #   run: aws s3 sync ./out s3://safespacefrontend --acl public-read
+
+#             # - name: Invalidate CloudFront Cache   # use tis wen front end as  sent u next_public_api_url to store in gitub secret else comment out
+#             #   run:
+#             #       aws cloudfront create-invalidation --distribution-id ${{
+#             #       secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
