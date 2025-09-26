@@ -29,15 +29,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build frontend
-        env:
-          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-          NEXT_PUBLIC_WEBSOCKET_URL: ${{ secrets.NEXT_PUBLIC_WEBSOCKET_URL }}
+      # - name: Build frontend
+      #   env:
+      #     NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+      #     NEXT_PUBLIC_WEBSOCKET_URL: ${{ secrets.NEXT_PUBLIC_WEBSOCKET_URL }}
 
-        run: |
-          npm run build
-          # If you're using Next.js static export
-          # npm run export
+        # run: |
+        #   npm run build
+        #   # If you're using Next.js static export
+        #   # npm run export
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -80,7 +80,7 @@ jobs:
           echo "cf_id=$CF_ID" >> $GITHUB_ENV
 
       - name: Deploy to S3
-        run: aws s3 sync ./build s3://bloodbridgefrontend --delete
+        run: aws s3 sync ./out s3://bloodbridgefrontend --delete
 
       - name: Invalidate CloudFront cache
         run: |
