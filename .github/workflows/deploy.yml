@@ -80,7 +80,7 @@ jobs:
           echo "cf_id=$CF_ID" >> $GITHUB_ENV
 
       - name: Deploy to S3
-        run: aws s3 sync ./out s3://safespacefrontend --delete
+        run: aws s3 sync ./out s3://bloodbridgefrontend --delete
 
       - name: Invalidate CloudFront cache
         run: |
