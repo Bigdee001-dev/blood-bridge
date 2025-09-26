@@ -168,7 +168,7 @@ resource "aws_s3_bucket_policy" "cloudfront_access" {
         Resource = "arn:aws:s3:::${var.bucket_name}/*",
         Condition = {
           StringEquals = {
-            "AWS:SourceArn" = aws_cloudfront_distribution.safespace_cloudfront_distribution.arn
+            "AWS:SourceArn" = aws_cloudfront_distribution.bloodbridge_cloudfront_distribution.arn
 
             
           }
